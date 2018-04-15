@@ -1,0 +1,5 @@
+Let users delete items (images, posts, pdfs, songs)
+Make template for songs (see spotify embedded web player)
+Make template for images (also get size from url endpoint)
+Add spotify embedded web player to pictures page
+Think about how to present the article(.rtf on the server) on the article page (html embedded. meaning iframe)
