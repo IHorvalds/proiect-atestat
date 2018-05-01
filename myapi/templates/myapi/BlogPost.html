@@ -35,7 +35,12 @@
   </aside>
 
   <article>
-      <div id="header" >
+    <style>
+      #header{
+        background-image: url("{{content.articleimage.url}}");
+      }
+    </style>
+      <div id="header">
       <h1> {{content.title}}</h1>
       <h3> {{content.subtitle}}</h3>
      <h4>{{content.author}}</h4>
