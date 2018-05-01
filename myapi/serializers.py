@@ -16,7 +16,7 @@ class ContentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Content
-        fields = ('url', 'id', 'presentation', 'path', 'owner', 'title', 'actualfile', 'description', 'owner', 'filetype')
+        fields = ('url', 'id', 'presentation', 'path', 'owner', 'title', 'subtitle', 'author', 'actualfile', 'articleimage', 'description', 'owner', 'filetype', 'ispublic')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

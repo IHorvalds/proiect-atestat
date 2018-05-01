@@ -1,0 +1,79 @@
+.circular--square {
+
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-size: 100px;   
+    background-position:50%;
+    background-repeat:no-repeat;
+    margin-top:10%;
+}
+
+.line{
+    margin-top:5%;
+    color:black;  
+    display: block;
+    height: 1px;
+    border-top: 5px solid #ccc;
+    margin-bottom: 0%;
+}
+
+h3
+{
+    text-align: left;
+    margin-left:10%;
+    font-family: Georgia;
+    margin-top: 15%;
+    font-size: 50px;
+}
+
+h1{
+    margin-top: -10%;
+    font-family: Indie Flower;
+    
+}
+
+h4{
+    margin-top: 0%;
+    text-align: left;
+    margin-left: 15%;
+    font-size: 30px;
+    margin-top: 4%;
+    font-family: Open Sans;
+}
+
+.red{
+    text-align: center;
+    color: black;
+    margin-right: 35%;
+    font-size: 20px;
+    font-family: Open Sans
+}
+
+h5{
+    font-size: 20px;
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#backgroundBox {
+    margin-left:14%;
+    margin-top:5%;
+    background: url(liniute.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    max-width: 150%;
+    align-content: center;
+}
+
+
+#background2{
+    margin-left:14%;
+    margin-top:5%;
+    background: url(11.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    max-width: 150%;
+    align-content: center;
+}

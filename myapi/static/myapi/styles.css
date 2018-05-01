@@ -1,0 +1,269 @@
+body
+{
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  grid-template-rows: 100px auto 150px;
+  grid-gap: 1em;
+  min-height:100%;
+  position:relative;
+  grid-template-areas: "header header header "
+						"sidebar-1 article sidebar-2"
+						"footer footer footer";
+
+}
+
+
+header,aside,article,footer{
+  background-color: #6699ff ;
+  padding: 0;
+
+}
+
+header
+{
+  grid-area:header;
+  grid-row: 1;
+  grid-column:1/4;
+  height: 100px;
+  width: auto;
+  background-color: #E0E0E0;
+  font-family: Amastery Hand;
+  color: #57A7D9;
+  text-align: center;
+  padding-left:150px;
+  padding:37px;
+  padding-right:150px;
+  font-size: 80px;
+box-shadow: 0px 10px 20px;
+}
+
+.left{
+  float:left;
+	font-family: Amastery Hand;
+	color: #57A7D9;
+	padding-left:100px;
+	font-size: 52px;
+  line-height: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+header img{
+ line-height: 60px;
+  margin-left: -10px;
+  margin-right: 0px;
+  margin-top: -20px;
+  margin-bottom: -10px;
+
+}
+header nav{
+float:right;
+font-family: Amastery Hand;
+color: #57A7D9;
+font-size: 52px;
+ line-height: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+
+}
+
+.sidebar-left
+{
+  grid-area: sidebar -1;
+  grid-row:2;
+  grid-column:1/2;
+ background-color: rgba(0, 0, 0, 0);
+}
+
+article {
+  grid-area:article;
+  grid-row: 2;
+  grid-column: 2/0;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 200px;
+}
+
+
+h1
+{
+    font-family: Fredoka One;
+    font-weight: regular;
+    color: #57A7D9;
+    font-size:150px;
+    margin-top: 100px;
+    text-align : center;
+}
+
+h2{
+    font-family: Georgia;
+    font-size: 50px;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 5px;
+    line-height: 56px;
+}
+
+h3
+{
+    font-family:Georgia;
+    text-align: right;
+    line-height: 56px;
+    color: #000000;
+    font-size:25px;
+    letter-spacing: auto;
+    margin-bottom:150px;
+}
+
+.LP
+{
+    text-align: left;
+	background-color: white;
+border: none;
+color : black;
+font-size: 50px;
+font-family: Georgia;
+line-height: 100px;
+}
+
+.header-stuff {
+	display: flex;
+	justify-content: center;
+}
+
+.title-image {
+	align-self: center;
+
+}
+
+.button:hover
+{
+	color: #57A7D9;
+}
+
+#id
+{
+    align-items:left;
+}
+
+.sidebar-right {
+  grid-area: sidebar -2;
+  grid-row: 2;
+  grid-column: 3 / 4;
+background-color: rgba(0, 0, 0, 0);
+}
+
+.galery
+{
+    text-align: left;
+    font-size: 50px;
+    font-family: Georgia;
+    background: white;
+    color: black;
+    line-height: 100px;
+}
+
+.article-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-height: 400px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.article-image {
+    max-width: 20%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.article-wrapper {
+  background-color: blue;
+  display: flex;
+  justify-content: space-around;
+}
+
+.preview{
+  box-shadow: 2px 2px 40px 2px  black inset;
+  width: 70%;
+  max-height: 400px;
+}
+
+footer {
+  grid-area:footer;
+  grid-row: 3;
+  grid-column: 1 / 4;
+  height: 300px;
+  background-color: #E0E0E0;
+  font-family: Georgia;
+  color: #000000;
+  text-align: right;
+  font-size: 30px;
+  position: relative;
+  bottom:0;
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+
+
+.vertical{
+    margin-top:-5%;
+    color:black;
+    margin-bottom: -1%;
+    margin: 0;
+}
+
+.vertical-flex {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 70%;
+	width: 362px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+  justify-content: center;
+	align-content: center;
+    font-size:30px;
+    color: black;
+}
+
+.horizontal-flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+    color: black;
+}
+
+.centered {
+	justify-content: space-around;
+}
+
+hr {
+  border-top: 1px solid black;
+}
+
+
+footer img {
+  line-height: 60px;
+ padding-left: 80px;
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+}

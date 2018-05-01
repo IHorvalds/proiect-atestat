@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+{% load static %}
+{% load rest_framework %}
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'myapi/styles.css' %}" >
+    <link rel="stylesheet" href="{% static 'myapi/styles.galery.css' %}">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="{% static 'myapi/favicon.ico' %}" sizes="16x16">
+<title>
+      Awesome Blog
+</title>
+</head>
+
+
+<body>
+
+  <div class="grid">
+  <header font-size=80px >
+    <span class="left"  > <a href="#" style="color: #57A7D9;"><img src="{% static 'myapi/Pink_Book.png' %}" alt="logo" height=80px> </a> </span>
+	<nav>
+    <a class="nav-button" href="/pictures" style="color: #57A7D9; "> <img src="{% static 'myapi/Camera.png' %}" height=60px> Pictures |  </a>
+    <a class="nav-button" href="/blog" style="color: #57A7D9; white-space:pre" > <img src="{% static 'myapi/Blog.png' %}" height=60px >  Blog |  </a>
+    <a class="nav-button" href="/about-us" style="color: #57A7D9; white-space:pre" > <img src="{% static 'myapi/Person.png' %}" height=60px>  About us</a>
+
+</nav>
+
+  </header>
+
+  <aside class="sidebar-left">
+  </aside>
+
+  <article>
+  <div class="header-stuff">
+  <img class="title-image" src="{% static 'myapi/mug 4.png' %}" style="height: 400px;"/>
+	  <div><h1><style>
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');</style>
+          AWESOME <br>
+		  </h1>
+			<h1 class="aims-block"> AIMS </h1>
+      <h2> A blog about getting motivated</h2>
+      <h3> written by semi-depressed tired teens</h3>
+	  </div></div>
+      <h2 class="LP">Latest Post</h2>
+      <br>
+       <h2 style="justify-self: center"><a style="color: grey; float: left" href="/blog/{{content.id}}">{{content.title}}</a></h2>
+        <script>
+        const articlepreview = document.querySelector('.article-preview');
+
+        function resizeIframe(obj) {
+          obj.style.height = obj.contentWindow.document.body.scrollHeight / 2 + 'px';
+        }
+        </script>
+      <div class="article-preview">
+      <img src={{content.articleimage.url}} class="article-image">
+      <div class="gallery-picture s3" style="width: 70%;">
+        <iframe class="gallery-image preview" src="{{content.actualfile.url}}" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <div class="overlay">
+          <a href="/blog/{{content.id}}" style="font-family: Georgia; letter-spacing: 0px;">Read more!</a>
+        </div>
+      </div>
+    </div>
+
+         <h2 class="galery"> Stuff we've seen </h2>
+
+      <div class="wrapper">
+    <div class="front-page-gallery oana-gallery">
+            <script>
+        var base = 'assets/oana-pictures/';
+        const gallery = document.querySelector('.oana-gallery');
+        var html = '';
+
+        for (var i = 1; i <= 9; i++) {
+          html += getPictures(i, generateSize());
+        }
+
+        gallery.innerHTML = html;
+
+        function getPictures(i, size) {
+
+          return `<div class="gallery-picture s${size} oana-image" id="animation">
+              <img class="gallery-image" src="https://source.unsplash.com/random">
+            </div>`;
+        }
+
+        function generateSize() {
+          return Math.floor(Math.random() * 2) + 1;
+        }
+      </script>
+    </div>
+  </div>
+
+ </article>
+
+
+
+  <aside class="sidebar-right">
+
+  </aside>
+
+
+
+  <footer font-size=30px style="color:black">
+  <span class="left"  > <img src="{% static 'myapi/heart3.png' %}" alt="heart" height=100px style="bottom: 10%;"> </span>
+
+  <div class="vertical-flex" style="margin-left: 70%">
+	<h2 style="font-size: 30px" >Site Map</h2>
+	<hr class="vertical" style="width: 100%" />
+	<div class="horizontal-flex">
+        <p style="flex-grow: 1; width: 33% font-size: 30px "> <a href="#" style="color : #000000">Home </a></p>
+		<hr />
+
+        <p style="flex-grow: 1; width: 33% font-size: 30px "> <a href="/pictures" style="color : #000000"> Pictures </a></p>
+	</div>
+	<div class="horizontal-flex centered">
+		<hr style="width: 33%" size="30"/>
+		<hr style="width: 33%" size="30"/>
+	</div>
+	<div class="horizontal-flex" >
+        <p style="flex-grow: 1; width: 33%"> <a href="/blog" style="color : #000000">Blog </a></p>
+		<hr />
+        <p style="flex-grow: 1; width: 33%" > <a href="/about-us" style="color : #000000">About Us </a> </p>
+	</div>
+</div>
+
+  </footer>
+
+
+
+
+</div>
+<script type="text/javascript" src="{% static 'myapi/script.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	</body>
+
+
+</html>

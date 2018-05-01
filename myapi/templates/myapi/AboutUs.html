@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+{% load static %}
+{% load rest_framework %}
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'myapi/styles.css' %}" >
+    <link rel="stylesheet" href="{% static 'myapi/styles.AboutUs.css' %}" >
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="{% static 'myapi/favicon.ico' %}" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Allan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<title>
+      Awesome Blog
+</title>
+</head>
+
+
+<body>
+
+  <div class="grid">
+  <header font-size=80px >
+    <span class="left"  > <a href="/" style="color: #57A7D9;"><img src="{% static 'myapi/Pink_Book.png' %}" alt="logo" height=80px> </a> </span>
+	<nav>
+    <a class="nav-button" href="/pictures" style="color: #57A7D9; "> <img src="{% static 'myapi/Camera.png' %}" height=60px> Pictures |  </a>
+    <a class="nav-button" href="/blog" style="color: #57A7D9; white-space:pre" > <img src="{% static 'myapi/Blog.png' %}" height=60px >  Blog |  </a>
+    <a class="nav-button" href="#" style="color: #57A7D9; white-space:pre" > <img src="{% static 'myapi/Person.png' %}" height=60px>  About us</a>
+
+</nav>
+
+  </header>
+
+  <aside class="sidebar-left">
+  </aside>
+
+  <article>
+
+<div id="backgroundBox">
+<img class="circular--square" src="{% static 'myapi/13.jpg' %}" alt="Avatar" style="width:500px; margin-left: -15%; margin-top:0%">
+      </div>
+      <div class="aboutus_stuff">
+          <h4> CROITORU TUDOR-ALIN |<span class="right red" style="white-space:pre"> Back-end Developer </span></h4>
+
+          <img src="{% static 'myapi/GLASSES.png' %}" style="width: 200px ; margin-left:50%;">
+      </div>
+            <h5>Hi! I am a computer geek with a passion for music and, recently, design. Networking is the field that excites me the most. Probably because I still have so much of it to learn.</h5>
+
+  	<hr class="line" style="width: 75%" />
+
+      <div id="background2">
+     <img class="circular--square" src="{% static 'myapi/14.jpeg' %}" alt="Avatar" style="width:500px; margin-left: -15%; margin-top:0%">
+      </div>
+
+      <div class="aboutus_stuff">
+      <h4> HEIM ANNE-MARIE |<span class="right red" style="white-space:pre"> Front-end Developer </span></h4>
+            <h5>Hello world! I am a nature lover , a worldwide traveler and a massive book worm  with a strong passion for DIY projects and journaling. Cyber security is the field that interests me the most, mainly because it keeps challenging me and pushing my limits!</h5>
+      </div>
+
+
+      <h3> We are</h3>
+      <h1> Awesome Aims </h1>
+ </article>
+
+
+
+  <aside class="sidebar-right">
+
+  </aside>
+
+
+
+  <footer font-size=30px style="color:black">
+  <span class="left"  > <img src="{% static 'myapi/heart3.png' %}" alt="heart" height=100px> </span>
+
+  <div class="vertical-flex" style="margin-left: 70%">
+	<h2 style="font-size: 30px" >Site Map</h2>
+	<hr class="vertical" style="width: 100%" />
+	<div class="horizontal-flex">
+        <p style="flex-grow: 1; width: 33% font-size: 30px "> <a href="/" style="color : #000000">Home </a></p>
+		<hr />
+
+        <p style="flex-grow: 1; width: 33% font-size: 30px "> <a href="/pictures" style="color : #000000"> Pictures </a></p>
+	</div>
+	<div class="horizontal-flex centered">
+		<hr style="width: 33%" size="30"/>
+		<hr style="width: 33%" size="30"/>
+	</div>
+	<div class="horizontal-flex" >
+        <p style="flex-grow: 1; width: 33%"> <a href="/blog" style="color : #000000">Blog </a></p>
+		<hr />
+        <p style="flex-grow: 1; width: 33%" > <a href="#" style="color : #000000">About Us </a> </p>
+	</div>
+</div>
+
+  </footer>
+
+
+
+
+</div>
+<script type="text/javascript" src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	</body>
+
+
+</html>
