@@ -114,8 +114,9 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 @renderer_classes((TemplateHTMLRenderer,))
 def frontpage(request):
     content = Content.objects.filter(ispublic=True, filetype='html').order_by('-id')[:1]
-    html = codecs.open(content[0].actualfile.path, "r", "utf-8")
-    return Response({'content': content[0], 'contentHTML': html.read()}, template_name='myapi/Home.html')
+    #html = codecs.open(content[0].actualfile.path, "r", "utf-8")
+    #return Response({'content': content[0], 'contentHTML': html.read()}, template_name='myapi/Home.html')
+    return Response({'content': content}, template_name='myapi/Home.html')
 
 @api_view(('GET',))
 @renderer_classes((TemplateHTMLRenderer,))
@@ -133,90 +134,3 @@ def pictures(request):
 @renderer_classes((TemplateHTMLRenderer,))
 def about_us(request):
     return Response(template_name='myapi/AboutUs.html')
-
-
-
-# class ContentList(generics.ListCreateAPIView): #  List all content file entries or create a new entry
-#     queryset = Content.objects.all()
-#     serializer_class = ContentSerializer
-#     permission_classes = (permissions.IsAuthenticatedOrReadOnly, permi.IsOwnerOrReadOnly)
-#
-#     def perform_create(self, serializer):
-#         serializer.save(owner=self.request.user)
-#
-# class ContentDetail(generics.RetrieveUpdateDestroyAPIView): # Retrieve/update/delete a content file entry
-#     #queryset = Content = Content.objects.all()
-#     queryset = Content.objects.all()
-#     serializer_class = ContentSerializer
-#     permission_classes = (permissions.IsAuthenticatedOrReadOnly, permi.IsOwnerOrReadOnly)
-#
-# class ContentPresentation(generics.GenericAPIView):
-#     queryset = Content.objects.all()
-#     renderer_classes = [TemplateHTMLRenderer, ]
-#     #template_name = 'myapi/image_piece.html'
-#
-#     def get(self, request, *args, **kwargs): #TODO: Return a response as either an image, sound clip, video clip, formatted text (html) or file page
-#         content = self.get_object()
-#         # content_types = {
-#         # 'jpg':  Response(content, template_name='image_piece.html')# IMAGES ##TODO: Not sure if this works?
-#         # 'jpeg': Response(content, template_name='image_piece.html')
-#         # 'png':  Response(content, template_name='image_piece.html')
-#         # 'rtf':  Response(content, template_name='text_piece.html')# FORMATTED TEXT
-#         # 'html': Response(content, template_name='text_piece.html')
-#         # 'pdf':  Response(content, template_name='pdf_piece.html')# Errmm?
-#         # 'mp3':  Response(content, template_name='audio_piece.html')# SOUND
-#         # 'wav':  Response(content, template_name='audio_piece.html')
-#         # 'zip':  Response(content, template_name='misc_piece.html')# MISCELLANEOUS FILES
-#         # '7zip': Response(content, template_name='misc_piece.html')
-#         # 'rar':  Response(content, template_name='misc_piece.html')
-#         # 'mp4':  Response(content, template_name='video_piece.html')# VIDEO
-#         # }
-#         if content.filetype in ["jpg", "jpeg", "png"]:
-#             return Response({'content': content}, template_name = 'myapi/image_piece.html')
-#         elif content.filetype == "html":
-#             return Response(content.actualfile)
-
-###################################################################################################################################################################
-
-# class ContentList(APIView):
-#     #  List all content file entries or create a new entry
-#
-#     def get(self, request, format=None):
-#         content_files = Content.objects.all()
-#         serializer = ContentSerializer(content_files, many=True)
-#         return Response(serializer.data)
-#
-#     def post(self, request, format=None):
-#         serializer = ContentSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-#
-# class ContentDetail(APIView):
-#     # Retrieve/update/delete a content file entry
-#
-#     def get_object(self, pk):
-#         try:
-#             return Content.objects.get(pk=pk)
-#         except Content.DoesNotExist:
-#             raise Http404
-#
-#     def get(self, request, pk, format=None):
-#         content_file = self.get_object(pk)
-#         serializer = ContentSerializer(content_file)
-#         return Response(serializer.data)
-#
-#     def put(self, request, pk, format=None):
-#         content_file = self.get_object(pk)
-#         serializer = ContentSerializer(content_file, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-#     def delete(self, request, pk, format=None):
-#         content_file = self.get_object(pk)
-#         content_file.delete()
-#         return Response(status=status.HTTP_204_NO_CONTENT)

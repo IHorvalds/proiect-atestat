@@ -45,9 +45,10 @@
       <h2> A blog about getting motivated</h2>
       <h3> written by semi-depressed tired teens</h3>
 	  </div></div>
+      {% if content %}
       <h2 class="LP">Latest Post</h2>
       <br>
-       <h2 style="justify-self: center"><a style="color: grey; float: left" href="/blog/{{content.id}}">{{content.title}}</a></h2>
+       <h2 style="justify-self: center"><a style="color: grey; float: left" href="/blog/{{content.0.id}}">{{content.title}}</a></h2>
         <script>
         const articlepreview = document.querySelector('.article-preview');
 
@@ -56,14 +57,17 @@
         }
         </script>
       <div class="article-preview">
-      <img src={{content.articleimage.url}} class="article-image">
+      <img src={{content.0.articleimage.url}} class="article-image">
       <div class="gallery-picture s3" style="width: 70%;">
-        <iframe class="gallery-image preview" src="{{content.actualfile.url}}" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <iframe class="gallery-image preview" src="{{content.0.actualfile.url}}" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
         <div class="overlay">
-          <a href="/blog/{{content.id}}" style="font-family: Georgia; letter-spacing: 0px;">Read more!</a>
+          <a href="/blog/{{content.0.id}}" style="font-family: Georgia; letter-spacing: 0px;">Read more!</a>
         </div>
       </div>
     </div>
+    {% else %}
+    <h2>We haven't posted any articles yet! :(</h2>
+    {% endif %}
 
          <h2 class="galery"> Stuff we've seen </h2>
 
